@@ -18,8 +18,12 @@ public class MainActivity extends AppCompatActivity {
 
         ListView listViewItem = findViewById(R.id.listViewItem);
 
-        Item item1 = new Item ("Bread Talk", 1.56, R.drawable.bread_talk_logo);
+        Item donut_item = new Item ("Donut", 2.56, R.drawable.donut_img);
 
-        itemArrayList.add(item1);
+        itemArrayList.add(donut_item);
+
+        ItemAdapter itemArrayAdapter = new ItemAdapter(this, 0, itemArrayList);
+
+        listViewItem.setAdapter(itemArrayAdapter);
     }
 }
