@@ -1,10 +1,12 @@
 package com.tutorial.myapplication;
 
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -32,8 +34,13 @@ public class ItemAdapter extends ArrayAdapter<Item> {
           Item currentItem = itemArrayList.get(position);
 
             TextView textView= view.findViewById(R.id.nameTextListItem);
+            TextView priceTextView= view.findViewById(R.id.priceTextListItem);
+            ImageView logoImageView= view.findViewById(R.id.imageViewListItem);
 
            textView.setText(currentItem.getItemName());
+            priceTextView.setText("Price: " + currentItem.getItemPrice());
+           logoImageView.setImageResource(currentItem.getItemImg());
+
 
            return view;
 
